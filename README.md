@@ -1,86 +1,124 @@
-# Explainable Anomaly Detection for IoMT Devices using SHAP
+# NeuroShield-IoMT: Explainable and Uncertainty-Aware Cyber Defense Framework for Medical IoT Networks
 
 ## Overview
-This repository contains the implementation of an explainable intrusion detection system for IoMT (Internet of Medical Things) environments using lightweight machine learning models and SHAP-based explainability techniques.
+NeuroShield-IoMT is a next-generation explainable cybersecurity framework designed for securing Internet of Medical Things (IoMT) ecosystems against sophisticated cyber threats.
 
-The project focuses on detecting cyber attacks in healthcare IoMT infrastructure while also providing interpretable explanations for model predictions.
+Unlike traditional intrusion detection systems that operate as black-box classifiers, NeuroShield-IoMT combines:
 
-The system is evaluated on the CICIoMT2024 benchmark dataset containing network traffic from 40 IoMT devices and 18 attack types.
+- Explainable AI (XAI)
+- Uncertainty-aware threat scoring
+- Multi-stage anomaly reasoning
+- Adaptive attack fingerprinting
+- Lightweight edge-compatible machine learning
 
----
+The framework is specifically engineered for healthcare environments where transparency, reliability, and low-latency inference are critical.
 
-## Features
-- Binary anomaly detection for IoMT traffic
-- Random Forest and XGBoost classifiers
-- SHAP explainability integration
-- Per-attack feature importance analysis
-- Cross-model SHAP feature agreement
-- SHAP stability analysis
-- Feature engineering and preprocessing pipeline
-- SMOTE-based imbalance handling
+The system leverages the CICIoMT2024 benchmark dataset containing network traffic generated from 40 heterogeneous IoMT devices and multiple real-world attack scenarios.
 
 ---
 
-## Dataset
-Dataset Used:
-- CICIoMT2024 Dataset
+# Core Innovations
 
-Attack Categories:
-- DDoS
-- DoS
-- MQTT attacks
-- Reconnaissance
-- Spoofing
-- Benign traffic
+## 1. Hybrid Explainable Threat Intelligence Engine
+The framework integrates:
+- Random Forest Ensembles
+- XGBoost Gradient Boosting
+- SHAP Explainability
+- Dynamic Feature Attribution
 
-Dataset Characteristics:
-- 8.77M+ records
-- 45 network traffic features
-- 18 attack types
+This enables both:
+- high-performance attack detection
+- interpretable forensic analysis
+
+---
+
+## 2. Uncertainty-Aware Risk Scoring
+Instead of generating binary predictions alone, the system computes:
+
+- Confidence Scores
+- Prediction Entropy
+- Feature Contribution Variance
+- Attack Certainty Levels
+
+This allows:
+- reliable threat prioritization
+- false positive reduction
+- clinical-grade trustworthiness
+
+---
+
+## 3. Multi-Level Attack Fingerprinting
+NeuroShield-IoMT introduces hierarchical attack fingerprinting:
+- Protocol-level signatures
+- Temporal traffic signatures
+- Statistical flow signatures
+- Explainability-driven feature patterns
+
+Each attack category develops a unique behavioral fingerprint.
+
+---
+
+## 4. Cross-Model Explainability Consensus
+The framework performs explainability agreement analysis between:
+- Random Forest
+- XGBoost
+
+This identifies:
+- stable cybersecurity indicators
+- robust attack discriminators
+- model-independent threat signatures
+
+---
+
+## 5. SHAP Stability Validation
+A novel explanation stability engine validates whether feature attributions remain stable across:
+- random subsamples
+- varying traffic distributions
+- noisy attack environments
+
+This improves reliability for real-world deployment in healthcare systems.
+
+---
+
+# Dataset
+
+## CICIoMT2024 Benchmark Dataset
+
+### Dataset Characteristics
+- 8.77M+ network flow records
+- 45 traffic features
 - 40 IoMT devices
+- 18 cyberattack types
+- Multi-protocol traffic generation
+
+### Attack Categories
+- DDoS Flooding
+- TCP/UDP DoS
+- MQTT Flooding
+- Reconnaissance
+- ARP Spoofing
+- Port Scanning
+- Vulnerability Scanning
+- ICMP Attacks
+- Benign Healthcare Traffic
 
 ---
 
-## Model Performance
+# System Architecture
 
-| Model | Accuracy | F1 Score | AUC |
-|-------|----------|----------|------|
-| Random Forest | 99.90% | 0.9995 | 0.9999 |
-| XGBoost | 99.87% | 0.9993 | 1.0000 |
-
----
-
-## Key Explainability Findings
-
-### DDoS / DoS
-- `Rate` is the dominant feature
-
-### Reconnaissance
-- `Header Length` strongly influences predictions
-
-### MQTT Attacks
-- `IAT` (Inter Arrival Time) is highly significant
-
-### Spoofing
-- `Header Length` contributes heavily to attack detection
-
----
-
-## Project Structure
-
-```bash
-├── data/
-├── notebooks/
-├── models/
-├── figures/
-├── results/
-├── src/
-│   ├── preprocessing.py
-│   ├── feature_selection.py
-│   ├── train_rf.py
-│   ├── train_xgb.py
-│   ├── shap_analysis.py
-│   └── evaluation.py
-├── requirements.txt
-├── README.md
-└── paper.pdf
+```text
+IoMT Traffic
+      ↓
+Flow Extraction Engine
+      ↓
+Feature Engineering Pipeline
+      ↓
+Adaptive Preprocessing Layer
+      ↓
+Hybrid ML Detection Core
+      ↓
+SHAP Explainability Engine
+      ↓
+Uncertainty Quantification Layer
+      ↓
+Threat Intelligence Dashboard
